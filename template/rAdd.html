@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action='' method='post' >
+  用户名：<input type='text' name='user' ><br/>
+ 权限：
+
+  <{foreach item=loop from=$list}>
+    <{if $loop.f_id == 0}>
+    <p style="color:red;font-size:12px;"><{$loop.m_name}></p>
+    <{else}>
+    <input type='checkbox' name='power[]' value=<{$loop.m_id}> ><{$loop.m_name}>
+    <{/if}>
+  <{/foreach}>
+  <br/>
+  <input type='submit' name='sub' value='添加'>
+</form>
+</body>
+</html>

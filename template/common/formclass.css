@@ -1,0 +1,115 @@
+.formclass {
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    width: auto;
+    border: 1px solid #3159bd;
+    background-color: #f7f7f7;
+}
+
+.formclass_top {
+    margin: 0px;
+    padding: 0px;
+    height:auto;
+    width: auto;
+    border: 1px solid #D0D0D0;
+    background-color: #FFFFFF;
+    font-size: 12px;
+    vertical-align: bottom;
+}
+
+.formclass_none {
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    width: auto;
+    border: 1px solid #f7f7f7;
+    background-color: #f7f7f7;
+}
+
+.formclass_showTd {
+  border-right-width: 1px;
+  border-left-width: 1px;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-right-color: #3159b5;
+  border-left-color: #3159b5;
+}
+
+.formclass_show {
+    background-color: #bdcfff;
+    height: auto;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    border-top-color: #3159bd;
+    border-right-color: #3159bd;
+    border-bottom-color: #3159bd;
+    border-left-color: #3159bd;
+}
+
+.formclass_show2 {
+    background-color: #f7f7f7;
+    height: auto;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    border-top-color: #3159bd;
+    border-right-color: #3159bd;
+    border-bottom-color: #3159bd;
+    border-left-color: #3159bd;
+}
+
+.formclass_show3 {
+    background-color: #f7f7f7;
+    height: auto;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    border-top-color: #3159bd;
+    border-right-color: #3159bd;
+    border-bottom-color: #3159bd;
+    border-left-color: #3159bd;
+}
+
+.formclass_show4 {
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    width: auto;
+    border: 1px solid #3159bd;
+    background-color: #dee7ff;
+}
+
+.formclass_show5 {
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    width: auto;
+    border: 0px solid #3159bd;
+    background-color: #dee7ff;
+}

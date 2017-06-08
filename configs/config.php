@@ -1,0 +1,13 @@
+<?php 
+  $con=mysql_connect('localhost','root','123456789');
+  if(!$con)
+  {
+	die('数据库服务器连接失败'.mysql_error());
+  }
+  mysql_set_charset('utf8',$con);
+  $db=mysql_select_db('student',$con);
+  if(!$db)
+  {
+     die('数据库连接失败'.mysql_error());
+  }
+?>

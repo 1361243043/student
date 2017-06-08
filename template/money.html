@@ -1,0 +1,154 @@
+<html>
+<head>
+<link rel="stylesheet" href="template/inc/css.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+function conShow(html)
+{
+	window.showModalDialog (html,
+	        "",
+	        "status:no;center:yes;scroll:no;resizable:no;help:no;dialogWidth:1000px;dialogHeight:500px");
+}
+function addShow()
+{
+	window.showModalDialog ("studfrontadd.html",
+	        "",
+	        "status:no;center:yes;scroll:no;resizable:no;help:no;dialogWidth:800px;dialogHeight:500px");
+}
+function editShow()
+{
+	window.showModalDialog ("stuInfoEdit.html",
+	        "",
+	        "status:no;center:yes;scroll:no;resizable:no;help:no;dialogWidth:800px;dialogHeight:500px");
+}
+</script>
+</head>
+<body>
+<form name="form1" method="get" action="">
+
+  <table width="1052" border=0 align=center cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+    <tbody>
+      <tr>
+         <th align=center colspan=16 style="height: 23px">缴费管理</th>
+      </tr>
+      <tr bgcolor="#DEE5FA">
+         <td colspan="16" align="right" class=txlrow>
+             <table width="1052" border=0  align=center cellpadding=2 cellspacing=1 class=tableBorder>
+               <tr style="background-color:'#DEE5FA';border-color:#DEE5FA'">
+                  <td>
+                     <div>
+                        
+	 年级<select name='mr_grade'>
+	 <option value=''>-请选择-</option>
+<{foreach item=aa from=$arr3}>
+	  <option value='<{$aa.mr_grade}>'><{$aa.mr_grade}></option>
+<{/foreach}>
+	 </select>
+	 班级<select name='mr_classid'>
+	 <option value=''>-请选择-</option>
+<{foreach item=aaa from=$arr4}>
+	  <option value='<{$aaa.mr_classid}>'><{$aaa.mr_classid}></option>
+<{/foreach}>
+	 </select>姓名<input type="text" name="s_name" value="" />
+	 收款人<input type="text" name="add_name" size="8" value="">
+     缴费情况<select name='ch_isverify'>
+	 <option value=''>已完成缴费情况</option>
+     <option value=''>欠费</option>
+     <option value=''>未缴费</option></select>
+      费用类型<select name='te_type'>
+	  	 <option value=''>-请选择-</option>
+       <{foreach item=a from=$arr2}>
+	  <option value='<{$a.te_id}>'><{$a.te_type}></option>
+<{/foreach}>
+      </select>
+                         &nbsp;&nbsp;<input type="submit" name="submit" value="查询">
+                        </div>
+                  </td>
+                  <td align="left">
+                     <a  href="addmoney.php">添加</a> 
+                  </td>
+              </tr>
+           </table>
+        </td>
+      </tr>
+      <tr align="center" bgcolor="#799AE1">
+	  <td width="6%" align="center" class="txlHeaderBackgroundAlternate">编号</td>
+         <td width="7%" align="center" class="txlHeaderBackgroundAlternate">年级</td>
+        <td width="6%" align="center" class="txlHeaderBackgroundAlternate">姓名</td>
+        <td width="7%" align="center" class="txlHeaderBackgroundAlternate">班级</td>
+        <td width="9%" align="center" class="txlHeaderBackgroundAlternate">缴费项目</td>
+        <td width="8%" align="center" class="txlHeaderBackgroundAlternate">缴费金额(元)</td>
+        <td align="center" class="txlHeaderBackgroundAlternate">已交金额(元)</td>
+        <td width="8%" align="center" class="txlHeaderBackgroundAlternate">欠费金额(元)</td>
+		 <td width="8%" align="center" class="txlHeaderBackgroundAlternate">收款人</td>
+		 <td width="8%" align="center" class="txlHeaderBackgroundAlternate">收款日期</td>
+        <td width="9%" align="center" class="txlHeaderBackgroundAlternate">备注</td>
+        <td width="6%" align="center" class="txlHeaderBackgroundAlternate" >操作</td>
+		 <td width="4%" align="center" class=txlHeaderBackgroundAlternate>选定</td>
+      </tr>
+	  <{foreach item=a from=$query}>
+      <tr bgcolor="#DEE5FA">
+	   <td align="center" class="txlrow"><{$id++}></td>
+       <td align="center" class="txlrow"><{$a.mr_grade}></td>
+        <td align="center" class="txlrow"><{$a.s_name}></td>
+        <td align="center" class="txlrow"><{$a.mr_classid}></td>
+        <td align="center" class="txlrow"><{$a.te_type}></td>
+        <td align="center" bgcolor="#DEE5FA" class="txlrow"><{$a.ch_must_money}></td>
+        <td width="8%" align="center" class="txlrow"><{$a.ch_real_money
+}></td>
+        <td width="8%" align="center" class="txlrow"><{$a.ch_debt_money
+}></td>
+		<td align="center" class="txlrow"><{$a.add_name}></td>       
+        <td align="center" class="txlrow"><{$a.add_date}></td>
+		<td align="center" class="txlrow"><{$a.ch_remarks}> </td>
+
+		<input type='hidden' value='<{$a.ch_id}>'> 
+
+        <td align="center" class="txlrow"><a href="editmoney.php?ch_id=<{$a.ch_id}>" > 修改 </a>
+        |<a href="delmoney.php?ch_id=<{$a.ch_id}>">  删除</a></td>
+		<td align=center class=txlrow><input type="checkbox" name="checkbox[]" value="<{$loop.bj_id}>"></td>
+      </tr>
+	  <{/foreach}> 
+        <tr bgcolor="#DEE5FA">
+        <td colspan="16" align=center bgcolor="#DEE5FA" class=txlrow> 
+		 <input type="radio" name="do" value="1" />删除</label>
+         
+          <span class="tablebody2">
+          <input type="button" value="全选" name="Submit2" onClick="selectAll()" />
+           <!-- <input type="button" value="反选" name="Submit2" onClick="selectOthers()"/> -->
+          </span>
+        <input type="submit" name="ok" value="确定" class="but"></td>
+      </tr>
+      <tr bgcolor="#DEE5FA">
+        <td colspan=16 align=center class=txlrow><a href="?page=1<{$pagelf}>"> 首页</a>
+	               <a href="?page=<{$pageList.up}><{$pagelf}>">上一页</a>
+	               <a href="?page=<{$pageList.down}><{$pagelf}>">下一页</a>
+	               <a href="?page=<{$pageList.pageNum}><{$pagelf}>">尾页</a>
+					 &nbsp;&nbsp;当前<{if !$pageList.page}>1<{else}><{$pageList.page}><{/if}>页&nbsp;&nbsp;&nbsp;&nbsp;共 <{$pageList.pageNum}> 页
+	              </td>
+      </tr>
+     </tbody></table>
+</FORM>
+<script  language="javascript">  
+       function  selectAll()  
+       {  
+       var  arrObj  =  document.all;  
+       for(var  i  =  0;  i  <  arrObj.length;i++)  
+       {  
+ 
+                               if(typeof  arrObj[i].type  !=  "undefined"  &&  arrObj[i].type=='checkbox')  arrObj[i].checked  =true;  
+       }  
+       }  
+ 
+       function  unSelectAll()  
+       {  
+           var  arrObj  =  document.all;  
+       for(var  i  =  0;  i  <  arrObj.length;i++)  
+       {  
+                               if(typeof  arrObj[i].type  !=  "undefined"  &&  arrObj[i].type=='checkbox')  arrObj[i].checked  =false;  
+       }  
+       }  
+</script> 
+
+</BODY>
+  </HTML>

@@ -1,0 +1,139 @@
+<html>
+<head>
+<link rel="stylesheet" href="inc/css.css" type="text/css" />
+<script type="text/javascript" src="js/time.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+function ChangeDate ()
+{
+      var textDate=document.getElementById('textDate');
+      reVal = window.showModalDialog ("common/day.php", "",
+        "status:no;center:yes;scroll:no;resizable:no;help:no;dialogWidth:255px;dialogHeight:260px");
+    if (reVal != null)
+        textDate.value = reVal;
+}
+function returns()
+{
+   window.close();
+}
+function SelectDate(nState) {
+		reVal = window.showModalDialog("js/day.html","","status:no;center:yes;scroll:no;resizable:no;help:no;dialogWidth:255px;dialogHeight:260px");
+
+		if (reVal != null) {
+			document.getElementById('DATE').value=reVal;
+		}
+	}
+	
+</script>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#F7F7F7" bordercolor="#FFFFFF" style="font-size: 10pt">
+ <tr>
+    <td width="100%" colspan="5" bgcolor="#F7F7F7" align="center">
+     <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#F7F7F7" bordercolor="#FFFFFF" style="font-size: 10pt">
+       <tr height="35">
+          <td width="20" bgcolor="#F7F7F7" align="center" background="images/title_left.gif"><img src="images/file1.gif"></td>
+          <td width="100" bgcolor="#F7F7F7" align="center" background="images/title_left.gif">
+            <font color="#f7f7f7">修改信息</font>
+          </td>
+          <td width="11" bgcolor="#F7F7F7" align="center" background="images/title_middle.gif">
+            <font color="#f7f7f7">&nbsp;</font>
+          </td>
+          <td bgcolor="#F7F7F7" align="center" background="images/title_right.gif">
+            <font color="#f7f7f7">&nbsp;</font>
+          </td>
+       </tr>
+     </table>
+    </td>
+ </tr>
+</table>
+
+<!-- 个人 -->
+<table width="100%"  border="5" cellpadding=2 cellspacing=1 bordercolor="#799AE1" class=tableBorder>
+    <tbody>
+     <tr bgcolor="#799AE1">
+        <td align="center" >学生姓名</td>
+		<td><input type="text" /></td>
+      </tr>
+      <tr bgcolor="#799AE1">
+        <td align="center" >性别</td>
+		<td>
+          <SELECT style="width:100px">
+			<OPTION selected>美工班</OPTION>
+			<OPTION VALUE="">php1</OPTION>
+            <OPTION VALUE="">php2</OPTION>
+		  </SELECT>
+        </td>
+      </tr>
+      <tr bgcolor="#DEE5FA">
+        <td align="center" >出生日期</td>
+		<td>
+          <input type="text" id="DATE"/><img border="0"src="images/sel_date.gif" name="btnBeginDate"style="cursor: hand"  onclick="SelectDate(3)">
+        </td>
+      </tr>
+      <tr bgcolor="#799AE1">
+        <td align="center" >班级</td>
+		<td>
+          <SELECT style="width:100px">
+			<OPTION selected>美工班</OPTION>
+			<OPTION VALUE="">php1</OPTION>
+            <OPTION VALUE="">php2</OPTION>
+		  </SELECT>
+        </td>
+      </tr>
+      <tr bgcolor="#799AE1">
+        <td align="center" >辅导员</td>
+		<td>
+          <SELECT style="width:100px">
+			<OPTION selected>王芳</OPTION>
+			<OPTION VALUE="">王高飞</OPTION>
+            <OPTION VALUE="">高化涛</OPTION>
+		  </SELECT>
+        </td>
+      </tr>
+      <tr bgcolor="#799AE1">
+        <td align="center" >宿舍</td>
+		<td><input type="text" /></td>
+      </tr>
+      <tr bgcolor="#799AE1">
+        <td align="center" >家庭住址</td>
+		<td><input type="text" /></td>
+      </tr>
+      <tr bgcolor="#799AE1">
+        <td align="center" >联系方式</td>
+		<td><input type="text" /></td>
+      </tr>
+      
+     
+      </tbody>
+	  <tr bgcolor="#DEE5FA">
+        <td colspan="2" align="center"><input type="button" value="确认修改" />
+		<input type="button" value="关闭" onClick="window.close()"/>
+		</td>
+      </tr>
+	  </table>
+
+<script  language="javascript">  
+       function  selectAll()  
+       {  
+       var  arrObj  =  document.all;  
+       for(var  i  =  0;  i  <  arrObj.length;i++)  
+       {  
+ 
+                               if(typeof  arrObj[i].type  !=  "undefined"  &&  arrObj[i].type=='checkbox')  arrObj[i].checked  =true;  
+       }  
+       }  
+ 
+       function  unSelectAll()  
+       {  
+           var  arrObj  =  document.all;  
+       for(var  i  =  0;  i  <  arrObj.length;i++)  
+       {  
+                               if(typeof  arrObj[i].type  !=  "undefined"  &&  arrObj[i].type=='checkbox')  arrObj[i].checked  =false;  
+       }  
+       }  
+</script> 
+
+</BODY>
+  </HTML>
+
